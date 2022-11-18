@@ -1,0 +1,54 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+header {
+  border-bottom: 1px solid #999;
+  margin-bottom: 2rem;
+  display: flex;
+  padding: 25px;
+}
+
+header h1 a {
+  color: red;
+}
+
+.nav-left {
+  margin-right: auto;
+}
+
+.nav-right {
+  display: flex;
+  padding-top: 2rem;
+}
+
+.entrada-publicacion {
+  margin-bottom: 2rem;
+}
+
+.entrada-publicacion h2 {
+  margin: 0.5rem 0;
+}
+
+
+.entrada-publicacion h2, a,.entrada-publicacion h2 a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.entrada-publicacion p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.entrada-publicacion a:hover {
+  color: red;
+}
+
+.acciones-publicacion {
+  display: flex;
+  justify-content: space-between;
+}
