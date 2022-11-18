@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Registro de Incidentes</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  <body>
+    <div>
+      <header>
+        <div class="nav-left">
+          <h1><a href="{% url 'inicio' %}" >Inicio</a></h1>
+        </div>
+        <div class="nav-right">
+          <a href="#">Registrar Incidente</a>
+        </div>
+      </header>
+      {% if user.is_authenticated %}
+        <p>Hola {{ user.username }}</p>
+        <a href="{% url 'logout' %}">Salir (cerrar sesión)</a>
+      {% else %}
+        <p>No ha iniciado sesión</p>
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+        <a href="{% url 'registro' %}">Crear cuenta</a>
+      {% endif %}
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </body>
+</html>
