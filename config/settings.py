@@ -118,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_FILES_DIRS = [str(BASE_DIR.joinpath('assets'))]
-STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('/var/www/v1/assets'))
+STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('/assets'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
