@@ -13,7 +13,7 @@
           <h1><a href="{% url 'inicio' %}" >Inicio</a></h1>
         </div>
         <div class="nav-right">
-          <a href="#">Registrar Incidente</a>
+          <a href="{% url 'nuevo_incidente' %}">Registrar Incidente</a>
         </div>
       </header>
       {% if user.is_authenticated %}

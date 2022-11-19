@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="entrada-publicacion">
+    <h2>Matrícula del vehículo: {{ incidente.matricula }}</h2>
+    <p>Modelo del vehículo: {{ incidente.modelo }}</p>
+    <p>Nombre del propietario: {{ incidente.propietario }}</p>
+    <p>Tipo de aseguramiento: {{ incidente.aseguramiento }}</p>
+  </div>
+ <div class="acciones-publicacion">
+    <a href="{% url 'editar_incidente' incidente.pk %}">Editar datos del Incidente</a>
+    <a href="{% url 'eliminar_incidente' incidente.pk %}">Eliminar Incidente</a>
+  </div>
+{% endblock content %}

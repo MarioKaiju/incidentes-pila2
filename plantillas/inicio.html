@@ -1,1 +1,10 @@
 {% extends 'base.html' %}
+
+{% block content %}
+  {% for inc in lista_incidentes %}
+    <div class="entrada_publicacion">
+      <h2><a href="{% url 'detalle_incidente' inc.pk %}">{{ inc.matricula }} </a></h2>
+      <p>{{ inc.modelo }} {{ inc.propietario }}</p>
+    </div>
+  {% endfor %}
+{% endblock content %}

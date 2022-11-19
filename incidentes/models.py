@@ -18,7 +18,7 @@ class Incidente(models.Model):
   aseguramiento = models.CharField(max_length=2, choices=ASEGURAMIENTO)
 
   def __str__(self):
-    return self.modelo + self.propietario
+    return str(self.propietario) + "  " + self.modelo
 
   def get_absolute_url(self):
     return reverse('detalle_incidente', args=[str(self.id_vehiculo)])
