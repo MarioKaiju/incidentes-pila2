@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {% for inc in lista_incidentes %}
-    <div class="entrada_publicacion">
-      <h2><a href="{% url 'detalle_incidente' inc.pk %}">{{ inc.matricula }} </a></h2>
-      <p>{{ inc.modelo }} {{ inc.propietario }}</p>
-    </div>
-  {% endfor %}
+  <div class="lista_incidentes">
+    {% for inc in lista_incidentes %}
+      <a href="{{ inc.get_absolute_url }}" class="carta_incidente">
+        <div class="contenedor_imagen_carta">
+          <img src="{{ inc.modelo.url_imagen }}" alt="Vehiculo">
+        </div>
+        <div class="carta_descripcion">
+          <h2>{{ inc.matricula }}</h2>
+          <p id="fecha">{{ inc.fecha | date:"d, m, Y" }}</p>
+          <p>Tipo de seguro: {{ inc.aseguramiento}}({{ inc.get_aseguramiento_display }})</p>
+          <p>Modelo: {{ inc.modelo }}</p>
+          <p>Dueño: {{ inc.propietario }}</p>
+          {% if inc.comentarios %}
+            <p class="resuelto">Incidente resuelto</p>
+          {% else %}
+            <p class="pendiente">Pendiente</p>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  
 {% endblock content %}

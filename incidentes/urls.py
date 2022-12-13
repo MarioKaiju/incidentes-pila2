@@ -3,8 +3,8 @@ from .views import VistaListaIncidentes, VistaDetalleIncidente, VistaCrearIncide
 
 urlpatterns = [
   path('', VistaListaIncidentes.as_view(), name='inicio'),
-  path('inc/<int:pk>/', VistaDetalleIncidente.as_view(), name='detalle_incidente'),
+  path('inc/<uuid:pk>/', VistaDetalleIncidente.as_view(), name='detalle_incidente'),
   path('inc/nuevo/', VistaCrearIncidente.as_view(), name='nuevo_incidente'),
-  path('inc/<int:pk>/editar/', VistaEditarIncidente.as_view(), name='editar_incidente'),
-  path('inc/<int:pk>/eliminar/', VistaEliminarIncidente.as_view(), name='eliminar_incidente'),
+  path('inc/<uuid:pk>/editar/', VistaEditarIncidente.as_view(), name='editar_incidente'),
+  path('inc/<uuid:pk>/eliminar/', VistaEliminarIncidente.as_view(), name='eliminar_incidente'),
 ]

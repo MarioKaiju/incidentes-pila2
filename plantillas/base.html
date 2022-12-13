@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
   <body>
-    <div>
-      <header>
+    <header>
+      <div class="encabezado">
         <div class="nav-left">
-          <h1><a href="{% url 'inicio' %}" >Inicio</a></h1>
-        </div>
+          <h1><a href="{% url 'inicio' %}" >Incidentes</a></h1>
+        </div>        
         <div class="nav-right">
           <a href="{% url 'nuevo_incidente' %}">Registrar Incidente</a>
+          {% if user.is_authenticated %}
+            <div class="links">
+              <p>Hola {{ user.username }}</p>
+              <a href="{% url 'logout' %}">Salir (cerrar sesión)</a>
+            </div>
+          {% else %}
+            <div class="links">
+              <p>No ha iniciado sesión</p>
+              <a href="{% url 'login' %}">Iniciar sesión</a>
+              <a href="{% url 'registro' %}">Crear cuenta</a>
+            </div>
+          {% endif %}
         </div>
-      </header>
-      {% if user.is_authenticated %}
-        <p>Hola {{ user.username }}</p>
-        <a href="{% url 'logout' %}">Salir (cerrar sesión)</a>
-      {% else %}
-        <p>No ha iniciado sesión</p>
-        <a href="{% url 'login' %}">Iniciar sesión</a>
-        <a href="{% url 'registro' %}">Crear cuenta</a>
-      {% endif %}
+      </div>
+    </header>
+    <main>
       {% block content %}
-      {% endblock content %}
-    </div>
+      {% endblock content %}      
+    </main>
   </body>
 </html>

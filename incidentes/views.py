@@ -18,7 +18,7 @@ class VistaDetalleIncidente(DetailView):
 class VistaCrearIncidente(CreateView):
   model = Incidente
   template_name = 'nuevo_incidente.html'
-  fields = ['modelo', 'matricula', 'propietario', 'aseguramiento']
+  fields = ['modelo', 'matricula', 'propietario', 'aseguramiento', 'descripcion', 'fecha']
 
 class VistaEditarIncidente(UpdateView):
   model = Incidente
