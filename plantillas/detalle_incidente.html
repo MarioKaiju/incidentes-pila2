@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="entrada-publicacion">
-    <h2>Matrícula del vehículo: {{ incidente.matricula }}</h2>
-    <p>Modelo del vehículo: {{ incidente.modelo }}</p>
-    <p>Nombre del propietario: {{ incidente.propietario }}</p>
-    <p>Tipo de aseguramiento: {{ incidente.aseguramiento }}</p>
+  <h2>Detalles del incidente</h2>
+  <div class="incidente">
+    <div class="contenedor_imagen">
+      <img src="{{ incidente.modelo.url_imagen }}" alt="">
+    </div>
+    <div class="contenedor_descripcion">
+      <h3>Matrícula del vehículo: {{ incidente.matricula }}</h2>
+      <p>Modelo del vehículo: {{ incidente.modelo }}</p>
+      <p>{{ incidente.fecha | date:"d, m, Y" }}</p>
+      <p>Nombre del propietario: {{ incidente.propietario }}</p>
+      <p>Tipo de aseguramiento: {{ inc.get_aseguramiento_display }}</p>
+      <h4>Comentarios:</h4>
+      {% if incidente.comentarios %}
+        <p>{{ incidente.comentarios }}</p>
+      {% else %}
+        <p>No hay respuesta todavía</p>
+      {% endif %}
+    </div>
   </div>
  <div class="acciones-publicacion">
     <a href="{% url 'editar_incidente' incidente.pk %}">Editar datos del Incidente</a>

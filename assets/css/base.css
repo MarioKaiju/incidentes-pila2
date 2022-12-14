@@ -107,21 +107,57 @@ main {
 
 .contenedor_imagen_carta {
   padding: 25px 25px 0 25px;
+  display: flex;
+  justify-content: center;
 }
 
 .contenedor_imagen_carta img {
-  height: 200px;
-  width: 100%;
+  height: 180px;
 }
 
 .carta_descripcion {
   padding: 15px 25px 25px 25px;
   background-color: #3a3a3a;
+  display: grid;
+  row-gap: 10px;
+  grid-template-areas: "matricula matricula" "modelo fecha" "dueño dueño" "seguro seguro" "estado estado";
+  grid-template-columns: 1fr auto;
+}
+
+.carta_descripcion #matricula {
+  grid-area: matricula;
+}
+
+.carta_descripcion #modelo {
+  grid-area: modelo;
+}
+
+.carta_descripcion #fecha {
+  grid-area: fecha;
+  font-size: 12px;
+  background-color: #25584c;
+  outline: 1px solid #ddd;
+  border-radius: .25em;
+  padding: .25em .5em;
+  align-self: center;
+}
+
+.carta_descripcion #dueño {
+  grid-area: dueño;
+}
+
+.carta_descripcion #seguro {
+  grid-area: seguro;
+}
+
+.carta_descripcion #estado {
+  grid-area: estado;
 }
 
 .carta_descripcion p {
   text-decoration: none;
   color: #fff;
+  font-size: 16px;
 }
 
 .carta_descripcion a:hover {
@@ -129,8 +165,10 @@ main {
 }
 
 .carta_descripcion h2 {
+  font-size: 20px;
   position: relative;
   color: #fff;
+  outline: 2px solid #fff;
   background-color: #0000aa;
   width: min-content;
   margin: 0 auto;
@@ -159,5 +197,107 @@ main {
 }
 
 .carta_descripcion .pendiente {
-  color: #fffb00;
+  color: #fff;
+  width: 100%;
+  background-color: #d7d30e;
+  padding: .35em 0;
+  text-align: center;
+  border-radius: .25em;
+}
+
+.carta_descripcion .resuelto {
+  color: #fff;
+  width: 100%;
+  background-color: #0ed730;
+  padding: .35em 0;
+  text-align: center;
+  border-radius: .25em;
+}
+
+.incidente {
+  display: flex;
+  gap: 50px;
+  margin-top: 25px;
+}
+
+.contenedor_imagen {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor_descripcion {
+  width: 50%;
+}
+
+.inicia_sesion {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  padding: .5em 1em;
+  border-radius: .25em;
+  margin: 50px auto 0;
+  display: flex;
+  max-width: fit-content;
+}
+
+.inicia_sesion:hover {
+  background-color: #444;
+}
+
+.fondo_login {
+  background-color: #25584c;
+}
+
+.contenedor_login {
+  background-color: #fff;
+  width: 80%;
+  display: flex;
+  margin: 100px auto 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.contenedor_login .presentacion {
+  width: 50%;
+  padding: 25px 25px 25px 25px;
+  box-sizing: border-box;
+  background-color: #2a2a2a;
+}
+
+.contenedor_login .presentacion img {
+  width: 100%;
+}
+
+.contenedor_login .formulario {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+.contenedor_login .formulario .contenedor_redes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_login .formulario a {
+  text-decoration: none;
+  color: #fff;
+  padding: .3em 0.5em;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  border-radius: 0.3em;
+}
+
+.contenedor_login .formulario #facebook{
+  background-color: #0000cc;
+}
+
+.contenedor_login .formulario #google {
+  outline: 1px solid #444;
+  color: #000;
 }

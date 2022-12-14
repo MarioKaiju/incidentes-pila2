@@ -30,8 +30,15 @@
       </div>
     </header>
     <main>
-      {% block content %}
-      {% endblock content %}      
+      {% if user.is_authenticated %}
+        {% block content %}
+        {% endblock content %}      
+      {% else %}
+        <h2 style="width: 100%; text-align: center;">
+          Debe iniciar sesión para ver el contenido de esta página
+        </h2>
+        <a href="{% url 'login' %}" class="inicia_sesion">Iniciar sesión</a>
+      {% endif %}
     </main>
   </body>
 </html>

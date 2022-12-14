@@ -1,12 +1,27 @@
-{% extends 'base.html' %}
-
-{%block content %}
-<h2>Acceso</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Acceder</button>
-</form>
-<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
-<a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
-{% endblock content %}
+{% load static %}
+<html>
+  <head>
+    <title>Registro de Incidentes</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  <body class="fondo_login">
+    <div class="contenedor_login">
+      <div class="presentacion">
+        <img src="{% static 'images/fondo_login.jpg' %}" alt="">
+      </div>
+      <div class="formulario">
+        <h2>Iniciar sesión</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Acceder</button>
+        </form>
+        <div class="contenedor_redes">
+          <a id="facebook" href="{% url 'social:begin' 'facebook' %}">Continuar con facebook</a>
+          <a id="google" href="{% url 'social:begin' 'google-oauth2' %}">Continuar con google</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

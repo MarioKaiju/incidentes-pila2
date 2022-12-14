@@ -8,15 +8,15 @@
           <img src="{{ inc.modelo.url_imagen }}" alt="Vehiculo">
         </div>
         <div class="carta_descripcion">
-          <h2>{{ inc.matricula }}</h2>
+          <h2 id="matricula">{{ inc.matricula }}</h2>
+          <p id="modelo">Modelo: {{ inc.modelo }}</p>
           <p id="fecha">{{ inc.fecha | date:"d, m, Y" }}</p>
-          <p>Tipo de seguro: {{ inc.aseguramiento}}({{ inc.get_aseguramiento_display }})</p>
-          <p>Modelo: {{ inc.modelo }}</p>
-          <p>Dueño: {{ inc.propietario }}</p>
+          <p id="dueño">Dueño: {{ inc.propietario }}</p>
+          <p id="seguro">Tipo de seguro: {{ inc.aseguramiento}}({{ inc.get_aseguramiento_display }})</p>
           {% if inc.comentarios %}
-            <p class="resuelto">Incidente resuelto</p>
+            <p id="estado" class="resuelto">Incidente resuelto</p>
           {% else %}
-            <p class="pendiente">Pendiente</p>
+            <p id="estado" class="pendiente">Pendiente</p>
           {% endif %}
         </div>
       </a>
