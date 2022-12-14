@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 h1, h2, h3, h4, h5, p {
   margin-block-end: 0;
   margin-block-start: 0;
@@ -259,6 +263,8 @@ main {
 }
 
 .contenedor_login .presentacion {
+  display: flex;
+  align-items: center;
   width: 50%;
   padding: 25px 25px 25px 25px;
   box-sizing: border-box;
@@ -275,6 +281,53 @@ main {
   padding: 25px;
 }
 
+.contenedor_login .formulario h2 {
+  font-weight: 700;
+  width: 100%;
+  font-size: 30px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc ;
+}
+
+.contenedor_login .formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+
+.contenedor_login .formulario .input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenedor_login .formulario .input label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contenedor_login .formulario .input input {
+  font-size: 16px;
+  box-shadow: #777 0 0 2px 0px inset;
+  outline: 1px solid #444;
+  border: none;
+  border-radius: 5px;
+  padding: .5em .5em;
+}
+
+.contenedor_login .formulario button {
+  width: 100%;
+  max-width: 250px;
+  align-self: center;
+  font-size: 18px;
+  padding: .5em 1em;
+  background-color: #25584c;
+  border-radius: 0.3em;
+  color: #fff;
+  border: none;
+}
+
 .contenedor_login .formulario .contenedor_redes {
   display: flex;
   flex-direction: column;
@@ -286,11 +339,12 @@ main {
 .contenedor_login .formulario a {
   text-decoration: none;
   color: #fff;
-  padding: .3em 0.5em;
+  padding: .5em 1em;
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
   text-align: center;
   border-radius: 0.3em;
+  box-sizing: border-box;
 }
 
 .contenedor_login .formulario #facebook{
