@@ -292,7 +292,7 @@ main {
 .contenedor_login .formulario form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
   margin-bottom: 10px;
 }
 
