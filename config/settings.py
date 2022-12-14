@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,8 +152,8 @@ LOGOUT_REDIRECT_URL = 'inicio'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '3377296495882548'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'a101608d00a7bd1b6c9260b8fa0273a5'  # App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = env('FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = env('FACEBOOK_SECRET')
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '431043747825-ik01i0ded84arpduprch53bnils76cks.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('GOOGLE_OAUTH2_SECRET')
