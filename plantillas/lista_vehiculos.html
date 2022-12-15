@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_superuser %}
+  <h2>Lista de Vehículos</h2>
+  {% if lista_vehiculos|length > 0 %}
+    <div class="lista_vehiculos">
+        {% for vehiculo in lista_vehiculos %}
+          <a href="{{ vehiculo.get_absolute_url }}" class="carta_vehiculo">
+            <div class="contenedor_imagen_carta">
+              <img src="{{ vehiculo.url_imagen }}" alt="Vehiculo">
+            </div>
+            <div class="carta_descripcion">
+              <p id="modelo">Modelo: {{ vehiculo.modelo }}</p>
+              <p id="año">Año del vehículo: {{ vehiculo.año }}</p>
+              <p id="marca">Marca: {{ vehiculo.marca }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      {% else %}
+        <h3>No hay Vehículos</h3>
+      {% endif %}
+    </div>
+  {% else %}
+    <h2 style="width: 100%; text-align: center;">
+      Debe ser superusuario para ver el contenido de esta página
+    </h2>
+  {% endif %}
+{% endblock content %}

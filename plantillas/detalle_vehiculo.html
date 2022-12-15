@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_superuser %}
+    <h2>Detalles del vehiculo	</h2>
+    <div class="vehiculo">
+      <div class="contenedor_imagen">
+        <img src="{{ vehiculo.url_imagen }}" alt="">
+      </div>
+      <div class="contenedor_descripcion">
+        <p id="modelo">Modelo: {{ vehiculo.modelo }}</p>
+        <p id="fecha">Año del vehículo: {{ vehiculo.año }}</p>
+        <p id="dueño">Marca: {{ vehiculo.marca }}</p>
+      </div>
+    </div>
+    <div class="acciones-publicacion">
+      <a href="{% url 'editar_vehiculo' vehiculo.pk %}">Editar datos del vehiculo</a>
+      <a href="{% url 'eliminar_vehiculo' vehiculo.pk %}">Eliminar vehiculo</a>
+    </div>
+  {% else %}
+    <h2 style="width: 100%; text-align: center;">
+      Debe ser superusuario para ver el contenido de esta página
+    </h2>
+  {% endif %}
+{% endblock content %}

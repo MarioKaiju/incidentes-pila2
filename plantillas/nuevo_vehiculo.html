@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="registro_vehiculo">
+    <h1>Nuevo Vehiculo</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="campo">
+          <label for="{{ field.id_for_label }}" >{{ field.html_name }}</label>
+          {{ field }}
+        </div>
+      {% endfor %}
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+{% endblock content %}
