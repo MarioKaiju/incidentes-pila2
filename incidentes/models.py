@@ -1,4 +1,5 @@
 from django.urls import reverse
+from django.contrib.auth.models import User
 from django.db import models
 import uuid
 
@@ -12,19 +13,19 @@ class Incidente(UUIDModel):
         ('DC', 'Daños colaterales'),
         ('DP', 'Daños parciales'),
     )
-  matricula = models.CharField(max_length=10, unique=True)
-  fecha = models.DateTimeField()
-  descripcion = models.TextField()
+  matricula = models.CharField(max_length=10, unique=False)
+  fecha = models.DateField()
+  descripcion = models.TextField(blank=True, default="")
   modelo = models.ForeignKey(
     'vehiculos.Vehiculo',
     on_delete=models.CASCADE
   )
   propietario = models.ForeignKey(
-    'auth.User',
+    User,
     on_delete=models.CASCADE
   )
   aseguramiento = models.CharField(max_length=2, choices=ASEGURAMIENTO)
-  comentarios = models.TextField(default="")
+  comentarios = models.TextField(default="", blank=True)
 
   def __str__(self):
     return str(self.matricula) + " " +  str(self.modelo) + " - " + str(self.propietario)

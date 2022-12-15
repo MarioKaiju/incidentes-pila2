@@ -9,8 +9,7 @@
     <div class="contenedor_descripcion">
       <h3>Matrícula del vehículo: {{ incidente.matricula }}</h2>
       <p>Modelo del vehículo: {{ incidente.modelo }}</p>
-      <p>{{ incidente.fecha | date:"d, m, Y" }}</p>
-      <p>Nombre del propietario: {{ incidente.propietario }}</p>
+      <p>Fecha del incidente: {{ incidente.fecha | date:"d, m, Y" }}</p>
       <p>Tipo de aseguramiento: {{ inc.get_aseguramiento_display }}</p>
       <h4>Comentarios:</h4>
       {% if incidente.comentarios %}
@@ -21,7 +20,11 @@
     </div>
   </div>
  <div class="acciones-publicacion">
-    <a href="{% url 'editar_incidente' incidente.pk %}">Editar datos del Incidente</a>
-    <a href="{% url 'eliminar_incidente' incidente.pk %}">Eliminar Incidente</a>
+    {% if incidente.propietario == user %}
+      <a href="{% url 'editar_incidente' incidente.pk %}">Editar datos del Incidente</a>
+      <a href="{% url 'eliminar_incidente' incidente.pk %}">Eliminar Incidente</a>
+    {% else %}
+      <a href="{% url 'comentar_incidente' incidente.pk %}">Comentar incidente</a>
+    {% endif %}
   </div>
 {% endblock content %}

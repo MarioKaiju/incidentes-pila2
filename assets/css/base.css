@@ -4,8 +4,9 @@ body {
   margin: 0;
 }
 
-button {
+button, textarea {
   font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -88,6 +89,7 @@ main h2 {
 .lista_incidentes, .lista_vehiculos {
   display: flex;
   flex-wrap: wrap;
+  gap: 25px;
 }
 
 .carta_incidente, .carta_vehiculo {
@@ -205,7 +207,7 @@ main h2 {
   color: #a3a3a3;
 }
 
-.carta_descripcion h2 {
+.carta_descripcion h3 {
   font-size: 20px;
   position: relative;
   color: #fff;
@@ -219,7 +221,7 @@ main h2 {
   border-radius: 5px;
 }
 
-.carta_descripcion h2::after {
+.carta_descripcion h3::after {
   position: absolute;
   content: '';
   width: 3px;
@@ -228,7 +230,7 @@ main h2 {
   background-color: #fff;
 }
 
-.carta_descripcion h2::before {
+.carta_descripcion h3::before {
   position: absolute;
   content: '';
   width: 3px;
@@ -265,6 +267,10 @@ main h2 {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+.contenedor_imagen img {
+  max-width: 100%;
 }
 
 .contenedor_descripcion {

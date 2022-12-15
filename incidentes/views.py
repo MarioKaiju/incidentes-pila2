@@ -8,17 +8,28 @@ class VistaListaIncidentes(ListView):
   model = Incidente
   template_name = 'inicio.html'
   context_object_name = 'lista_incidentes'
+  def get_queryset(self):
+    queryset = super().get_queryset()
+    if self.request.user.is_superuser:
+      return queryset
+    if self.request.user.is_authenticated:
+      return queryset.filter(propietario=self.request.user)
+    else:
+      return queryset
 
 class VistaDetalleIncidente(DetailView):
   model = Incidente
   template_name = 'detalle_incidente.html'
   context_object_name = 'incidente'
 
-
 class VistaCrearIncidente(CreateView):
   model = Incidente
   template_name = 'nuevo_incidente.html'
   fields = ['modelo', 'aseguramiento', 'matricula', 'fecha', 'descripcion']
+  
+  def form_valid(self, form):
+    form.instance.propietario = self.request.user
+    return super().form_valid(form)
 
 class VistaEditarIncidente(UpdateView):
   model = Incidente
@@ -30,3 +41,8 @@ class VistaEliminarIncidente(DeleteView):
   template_name = 'eliminar_incidente.html'
   success_url = reverse_lazy('inicio')
   context_object_name = 'incidente'
+
+class VistaComentarIncidente(UpdateView):
+  model = Incidente
+  template_name = 'comentar_incidente.html'
+  fields = ['comentarios']
