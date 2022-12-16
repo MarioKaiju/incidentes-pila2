@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+<!---->
+{% block content %}
+<div class="registro_vehiculo" style="width: 400px;">
+  <form style="display: flex; flex-direction: column; gap: 50px;" action="" method="post">{% csrf_token %}
+    <h6>Está completamente seguro de que quiere eliminar: "{{ vehiculo }}" </h6>
+    <input class="submit" type="submit" value="Eliminar"></div>
+  </form>
+</div>
+{% endblock content %}

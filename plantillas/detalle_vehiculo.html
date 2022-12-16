@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
-
+<!---->
 {% block content %}
   {% if user.is_superuser %}
     <h2>Detalles del vehiculo	</h2>
-    <div class="vehiculo">
+    <div class="detalle_vehiculos">
       <div class="contenedor_imagen">
-        <img src="{{ vehiculo.url_imagen }}" alt="">
+        <img src="{{ vehiculo.url_imagen }}" alt="Vehiculo">
       </div>
-      <div class="contenedor_descripcion">
-        <p id="modelo">Modelo: {{ vehiculo.modelo }}</p>
-        <p id="fecha">Año del vehículo: {{ vehiculo.año }}</p>
-        <p id="dueño">Marca: {{ vehiculo.marca }}</p>
+      <div class="carta_descripcion2">
+        <h6 id="modelo">Modelo: {{ vehiculo.modelo }}</h6>
+        <h6 id="año">Año del vehículo: {{ vehiculo.año }}</h6>
+        <h6 id="marca">Marca: {{ vehiculo.marca }}</h6>
       </div>
     </div>
     <div class="acciones">
-      <a href="{% url 'editar_vehiculo' vehiculo.pk %}">Editar datos del vehiculo</a>
-      <a href="{% url 'eliminar_vehiculo' vehiculo.pk %}">Eliminar vehiculo</a>
+      <a class="botonedit"  href="{% url 'editar_vehiculo' vehiculo.pk %}">Editar datos del vehiculo</a>
+      <a  class="botondelete" href="{% url 'eliminar_vehiculo' vehiculo.pk %}">Eliminar vehiculo</a>
     </div>
   {% else %}
     <h2 style="width: 100%; text-align: center;">

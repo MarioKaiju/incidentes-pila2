@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-
+<!---->
 {% block content %}
-  <h1>Eliminar Incidente</h1>
-  <form action="" method="post">{% csrf_token %}
-    <h2>Está completamente seguro de que quiere eliminar: "{{ incidente.matricula }}" </h2>
-    <input type="submit" value="Eliminar">
-  </form>
-
+<div class="registro_incidente" style="width: 400px;" >
+    <form style="display: flex; flex-direction: column; gap: 50px;" action="" method="post">
+      {% csrf_token %}
+      <h6>Está completamente seguro de que quiere eliminar: "{{ incidente.matricula }}" </h6>
+      <button class="submit" type="submit">Eliminar</button>
+    </form>
+</div>
 {% endblock content %}

@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
-
+<!---->
 {% block content %}
-  <h1>Editar Incidente</h1>
-  <form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Modificar">
+<div class="registro_vehiculo">
+  <h1>Editar datos del Vehiculo</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="campo">
+        <label for="{{ field.id_for_label }}" >{{ field.html_name }}</label>
+        {{ field }}
+      </div>
+    {% endfor %}
+    <button type="submit">Guardar cambios</button>
   </form>
-
+</div>
+  
 {% endblock content %}

@@ -10,7 +10,7 @@
     <header>
       <div class="encabezado">
         <div class="nav-left">
-          <h1><a href="{% url 'inicio' %}" >Incidentes</a></h1>
+          <h1><a href="{% url 'inicio' %}" >SEGUROS LA LAGUNA</a></h1>
         </div>        
         <div class="nav-right">
           {% if user.is_authenticated %}
@@ -40,7 +40,7 @@
         {% endblock content %}      
       {% else %}
         <h2 style="width: 100%; text-align: center;">
-          Debe iniciar sesión para ver el contenido de esta página
+          Inicie sesión para ver el contenido de esta página
         </h2>
         <a href="{% url 'login' %}" class="inicia_sesion">Iniciar sesión</a>
       {% endif %}

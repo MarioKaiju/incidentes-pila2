@@ -12,13 +12,70 @@ button, textarea {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1, h2, h3, h4, h5, p {
+p {
   margin-block-end: 0;
   margin-block-start: 0;
 }
 
+
+h1, h2, h3, h4, h5 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  color :rgb(255, 0, 0);
+  font-family: sans-serif;
+  font-size: 25px;
+  
+}
+h6{
+  margin-block-end: 0;
+  margin-block-start: 0;
+  color :rgb(1, 90, 68);
+  font-family: sans-serif;
+  font-size: 25px;
+}
+
+.botondelete, .botonedit {
+  text-decoration: none;
+  border: none;
+  outline: 1px #000 solid;
+  padding: .35em .5em;
+  border-radius: .3em;
+}
+
+.botonedit {
+  background: #fffb00;
+  color: #000;
+  border: none;
+}
+.botonedit:hover {
+  background: rgb(255, 251, 0);
+}
+
+.botonedit:active {
+  border: 1px inset #000;
+}
+
+.botondelete {
+  text-decoration: none;
+  background: #ff0000;
+  color: #ffffff;
+}
+.botondelete:hover {
+  background: #ff0000;
+}
+.botondelete:active {
+  border: 1px inset #000;
+}
+.submit {
+  background: #ff0000;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px;
+}
 header {
-  background-color: #000000;
+  background-color: #008066;
 }
 
 .encabezado {
@@ -139,7 +196,17 @@ main h2 {
 .lista_vehiculos .carta_descripcion {
   background-color: #04237a;
 }
+.detalle_vehiculos  {
+  display: flex;
+  gap: 50px;
+}
 
+.carta_descripcion2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .lista_incidentes .carta_descripcion {
   background-color: #3a3a3a;
@@ -266,6 +333,13 @@ main h2 {
   margin-top: 25px;
 }
 
+.acciones {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end;
+}
+
 .contenedor_imagen {
   width: 50%;
   display: flex;
@@ -292,11 +366,11 @@ main h2 {
 }
 
 .inicia_sesion:hover {
-  background-color: #444;
+  background-color: rgb(255, 255, 255);
 }
 
 .fondo_login {
-  background-color: #25584c;
+  background-color: #008066;
 }
 
 .contenedor_login {
@@ -314,7 +388,7 @@ main h2 {
   width: 50%;
   padding: 25px 25px 25px 25px;
   box-sizing: border-box;
-  background-color: #2a2a2a;
+  background-color: #fdb927;
 }
 
 .contenedor_login .presentacion img {
@@ -384,7 +458,7 @@ main h2 {
 
 .contenedor_login .formulario a {
   text-decoration: none;
-  color: #fff;
+  color: rgb(255, 255, 255);
   padding: .5em 1em;
   width: 100%;
   max-width: 250px;
@@ -394,15 +468,35 @@ main h2 {
 }
 
 .contenedor_login .formulario #facebook{
-  background-color: #0000cc;
+  padding:5px 0px;background-color:#0000cc;overflow:hidden;
+  font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:20px;
+  /*background-color: #0000cc;*/
+  
+
 }
 
 .contenedor_login .formulario #google {
-  outline: 1px solid #444;
-  color: #000;
+   padding:5px 0px;background-color:#ff0000;overflow:hidden;
+  font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:20px;
 }
-
-.registro_vehiculo, .registro_incidente, .comentar_incidente {
+.detalle_vehiculo a{
+  max-width: 600px;
+  box-sizing: border-box;
+  box-shadow: #999 0 0 10px 2px;
+  margin: 25px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.comentar_incidente form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 0;
+}
+.registro_vehiculo, .registro_incidente,.comentar_incidente {
   max-width: 600px;
   box-sizing: border-box;
   box-shadow: #999 0 0 10px 2px;
@@ -482,4 +576,31 @@ main h2 {
   font-size: 15px;
   padding: .5em .5em;
   border-radius: 5px;
+}
+
+.comentar {
+  font-size: 25px;
+  color: rgb(255, 0, 0);
+  font-style: italic;
+  font-family: 'Courier New', Courier, monospace;
+}
+.contenedor_redes boton{
+border: 1px solid #2e518b; /*anchura, estilo y color borde*/
+padding: 10px; /*espacio alrededor texto*/
+background-color: #2e518b; /*color botón*/
+color: #ffffff; /*color texto*/
+text-decoration: none; /*decoración texto*/
+text-transform: uppercase; /*capitalización texto*/
+font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+border-radius: 50px; /*bordes redondos*/
+}
+.contenedor_acciones-editar{
+  padding:5px 0px;background-color:#e5ff00;overflow:hidden;
+  font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:20px;
+}
+.comentario {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 105, 40);
+  display: inline-table;
+  padding: 0.5em;
 }
