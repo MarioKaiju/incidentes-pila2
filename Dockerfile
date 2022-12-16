@@ -1,5 +1,5 @@
 # Obtener imagen base
-FROM python:3.10.4-slim-bullseye
+FROM python:3
 
 # Establecer variables de entorno
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
