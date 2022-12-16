@@ -13,6 +13,8 @@ services:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
+      - static_vol:/code/sub_app/static
+      - media_vol:/code/sub_app/media
       - .:/code
     ports:
       - 8000:8000
@@ -22,3 +24,16 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+
+  nginx:
+    build: ./nginx
+    volumes:
+        - static_vol:/code/sub_app/static
+        - media_vol:/code/sub_app/media
+    ports:
+      - 80:80
+    depends_on:
+      - web
+volumes:
+  static_vol:
+  media_vol:
