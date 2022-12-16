@@ -19,12 +19,16 @@
       {% endif %}
     </div>
   </div>
- <div class="acciones-publicacion">
+ <div class="acciones">
     {% if incidente.propietario == user %}
       <a href="{% url 'editar_incidente' incidente.pk %}">Editar datos del Incidente</a>
       <a href="{% url 'eliminar_incidente' incidente.pk %}">Eliminar Incidente</a>
     {% else %}
-      <a href="{% url 'comentar_incidente' incidente.pk %}">Comentar incidente</a>
+      {% if incidente.comentarios %}
+        <a href="{% url 'comentar_incidente' incidente.pk %}">Editar comentario</a>
+      {% else %}
+        <a href="{% url 'comentar_incidente' incidente.pk %}">Comentar incidente</a>
+      {% endif %}
     {% endif %}
   </div>
 {% endblock content %}

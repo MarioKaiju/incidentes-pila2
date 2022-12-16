@@ -4,9 +4,12 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 button, textarea {
   font-family: 'Source Sans Pro', sans-serif;
-  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -257,7 +260,7 @@ main h2 {
   border-radius: .25em;
 }
 
-.incidente {
+.incidente, .vehiculo {
   display: flex;
   gap: 50px;
   margin-top: 25px;
@@ -399,7 +402,7 @@ main h2 {
   color: #000;
 }
 
-.registro_vehiculo, .registro_incidente {
+.registro_vehiculo, .registro_incidente, .comentar_incidente {
   max-width: 600px;
   box-sizing: border-box;
   box-shadow: #999 0 0 10px 2px;
@@ -418,8 +421,15 @@ main h2 {
   margin: 0;
 }
 
+.comentar_incidente form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 0;
+}
 
-.registro_vehiculo .campo, .registro_incidente .campo {
+
+.registro_vehiculo .campo, .registro_incidente .campo, .comentar_incidente .campo {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -427,7 +437,7 @@ main h2 {
   text-transform: capitalize;
 }
 
-.registro_vehiculo input, .registro_incidente input {
+.registro_vehiculo input, .registro_incidente input, .comentar_incidente input {
   border: none;
   box-shadow: #777 0 0 2px 0px inset;
   outline: 1px solid #444;
@@ -436,7 +446,7 @@ main h2 {
   border-radius: 5px;
 }
 
-.registro_vehiculo button, .registro_incidente button {
+.registro_vehiculo button, .registro_incidente button, .comentar_incidente button {
   background-color: #25584c;
   font-size: 18px;
   padding: .35em;
@@ -464,7 +474,7 @@ main h2 {
   border-radius: 5px;
 }
 
-.registro_incidente .descripcion textarea {
+.registro_incidente .descripcion textarea, .comentar_incidente textarea {
   border: none;
   resize: none;
   box-shadow: #777 0 0 2px 0px inset;
