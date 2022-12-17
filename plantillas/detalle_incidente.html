@@ -11,6 +11,8 @@
       <h6>Modelo: {{ incidente.modelo }}</h6>
       <h6>Fecha: {{ incidente.fecha | date:"d, m, Y" }}</h6>
       <h6>Aseguramiento: {{ incidente.get_aseguramiento_display }}</h6>
+      <h6>Descripción del incidente: </h6>
+      <p>{{ incidente.descripcion }}</p>
       <h4>Comentarios:</h4>
       {% if incidente.comentarios %}
         <p class="comentario">{{ incidente.comentarios }}</p>
